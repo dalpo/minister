@@ -9,15 +9,15 @@ Gem::Specification.new do |s|
   s.version     = Amministrativa::VERSION
   s.authors     = ["Andrea Dal Ponte"]
   s.email       = ["info@andreadalponte.com"]
+  s.license     = "MIT"
   s.homepage    = "TODO"
   s.summary     = "TODO: Summary of Amministrativa."
-  s.description = "TODO: Description of Amministrativa."
-  s.license     = "MIT"
+  s.description = <<-DESCRIPTION
+  TODO: Description of Amministrativa."
+DESCRIPTION
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 4.2.5.1"
-
-  s.add_development_dependency "sqlite3"
+  s.add_dependency "rails", "~> 4.2"
 end

@@ -13,3 +13,23 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+group :development, :test do
+  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.4.2'
+  gem 'factory_girl_rails'
+  gem 'dotenv-rails'
+  gem 'i18n-tasks'
+end
+
+group :test do
+  gem 'ammeter'
+  gem 'database_cleaner'
+  gem 'formulaic'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'shoulda-matchers', '~> 3.1.1'
+  gem 'timecop'
+  gem 'webmock'
+end
