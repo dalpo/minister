@@ -1,4 +1,4 @@
 module Amministrativa
-  class ApplicationController < ActionController::Base
+  class ApplicationController < Amministrativa.parent_controller.constantize
   end
 end
