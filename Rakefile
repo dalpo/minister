@@ -6,6 +6,8 @@ end
 
 require 'rdoc/task'
 
+require File.expand_path('../spec/dummy/config/application', __FILE__)
+
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'Amministrativa'
@@ -14,21 +16,19 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-
-
-
-
+APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
+load 'rails/tasks/engine.rake'
+load 'rails/tasks/statistics.rake'
 
 Bundler::GemHelper.install_tasks
 
-require 'rake/testtask'
+# require 'rake/testtask'
 
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+if defined? RSpec
+  task(:spec).clear
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.verbose = false
+  end
 end
 
-
-task default: :test
+task default: :spec
