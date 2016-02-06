@@ -1,3 +1,5 @@
+require 'amministrativa/manifest_resolver'
+
 module Amministrativa
   # Convenience methods for Rails routing
   module Routing
