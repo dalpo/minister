@@ -1,12 +1,27 @@
 module Amministrativa
   # Convenience methods for Rails routing
   module Routing
-    # convenience function for mounting the amministrativa resourses
-    def mount_amministrativa(namespace_name = :admin, namespace_options = {})
+    # Convenience function for mounting the different resources
+    # for each amministrativa manifest.
+    def amministrativa_for(manifest, options = {})
       # mount Amministrativa::Engine => "/amministrativa"
 
-      namespace namespace_name, namespace_options do
-        # mount resourses
+      namespace manifest, options do
+        amministrativa_resources_for(manifest).each do |name|
+          # `resource_name` is required by amministrativa controllers
+          resources name, resource_name: name
+        end
       end
     end
+
+    protected
+
+      def amministrativa_manifest_for(manifest)
+        ManifestResolver.resolve(manifest)
+      end
+
+      def amministrativa_resources_for(manifest)
+        amministrativa_manifest_for(manifest).resources
+      end
   end
+end
