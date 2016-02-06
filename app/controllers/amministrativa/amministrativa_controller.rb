@@ -1,5 +1,6 @@
 require 'amministrativa/controller_responder'
 require 'amministrativa/controller_resolver'
+require 'amministrativa/controller_search'
 
 module Amministrativa
   class AmministrativaController < Amministrativa.parent_controller.constantize
@@ -7,10 +8,9 @@ module Amministrativa
 
     include ControllerResponder
     include ControllerResolver
+    include ControllerSearch
 
     before_action :set_resource, only: :member_actions
-
-    helper_method :search_object
 
     def index
       @resources = search_collection.page(params[:page])
@@ -69,20 +69,6 @@ module Amministrativa
 
       def resource_params
         {}
-      end
-
-      def search_params
-        (params[:q] || {}).tap do |q|
-          q[:s] = 'id desc' if q[:s].blank?
-        end
-      end
-
-      def search_object
-        @search_object ||= collection.ransack(search_params)
-      end
-
-      def search_collection
-        search_object.result(distinct: true)
       end
   end
 end
