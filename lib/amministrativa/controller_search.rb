@@ -1,6 +1,7 @@
 require 'active_support/concern'
 
 module Amministrativa
+  # Controller concern responsible to manage Ransack search logic
   module ControllerSearch
     extend ActiveSupport::Concern
 
@@ -10,18 +11,18 @@ module Amministrativa
 
     protected
 
-      def search_params
-        (params[:q] || {}).tap do |q|
-          q[:s] = 'id desc' if q[:s].blank?
-        end
+    def search_params
+      (params[:q] || {}).tap do |q|
+        q[:s] = 'id desc' if q[:s].blank?
       end
+    end
 
-      def search_object
-        @search_object ||= collection.ransack(search_params)
-      end
+    def search_object
+      @search_object ||= collection.ransack(search_params)
+    end
 
-      def search_collection
-        search_object.result(distinct: true)
-      end
+    def search_collection
+      search_object.result(distinct: true)
+    end
   end
 end

@@ -2,12 +2,13 @@ require 'rails/generators/base'
 
 module Amministrativa
   module Generators
+    # Generate an amministrativa initializer to override default configurations
     class InstallGenerator < Rails::Generators::Base
-      source_root File.expand_path("../../templates", __FILE__)
+      source_root File.expand_path('../../templates', __FILE__)
 
-      desc "Creates an Amministrativa initializer to your application."
+      desc 'Creates an Amministrativa initializer to your application.'
       def copy_initializer
-        template "amministrativa.rb", "config/initializers/amministrativa.rb"
+        template 'amministrativa.rb', 'config/initializers/amministrativa.rb'
       end
     end
   end

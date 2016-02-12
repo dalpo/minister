@@ -1,6 +1,7 @@
 require 'active_support/concern'
 
 module Amministrativa
+  # Controller concern resposible to initialiaze the configured responder
   module ControllerResponder
     extend ActiveSupport::Concern
 

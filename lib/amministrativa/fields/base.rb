@@ -1,5 +1,6 @@
 module Amministrativa
   module Fields
+    # Amministrativa abstract class with the field render logic
     class Base
       attr_reader :name, :model, :options
 
@@ -26,35 +27,35 @@ module Amministrativa
       end
 
       def input_class
-        'field'.freeze
+        'field'
       end
 
       protected
 
-        # Lookup translations based on object name, actual action and attribute.
-        # Lookup priority as follows:
-        #
-        #   amministrativa.{namespace}.{model}.{action}.{attribute}
-        #   amministrativa.{namespace}.{model}.{attribute}
-        #   amministrativa.{namespace}.defaults.{attribute}
-        #
-        #  Namespace is used for :labels and :hints.
-        #
-        #  Example:
-        #
-        #    amministrativa:
-        #      labels:
-        #        user:
-        #          email: 'E-mail para efetuar o sign in.'
-        #
-        #  Take a look at our locale example file.
-        def translate_from_namespace(namespace, default = '')
-          # do something
-        end
+      # Lookup translations based on object name, actual action and attribute.
+      # Lookup priority as follows:
+      #
+      #   amministrativa.{namespace}.{model}.{action}.{attribute}
+      #   amministrativa.{namespace}.{model}.{attribute}
+      #   amministrativa.{namespace}.defaults.{attribute}
+      #
+      #  Namespace is used for :labels and :hints.
+      #
+      #  Example:
+      #
+      #    amministrativa:
+      #      labels:
+      #        user:
+      #          email: 'E-mail para efetuar o sign in.'
+      #
+      #  Take a look at our locale example file.
+      def translate_from_namespace(namespace, default = '')
+        # do something
+      end
 
-        def i18n_scope
-          'amministrativa'.freeze
-        end
+      def i18n_scope
+        'amministrativa'
+      end
     end
   end
 end

@@ -1,4 +1,12 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'spec/dummy/**/*'
+    - 'spec/i18n_spec.rb'
+
 Rails:
   Enabled: true
 
-require: rubocop-rspec
+ClassVars:
+  Enabled: false

@@ -3,6 +3,8 @@ require 'amministrativa/controller_resolver'
 require 'amministrativa/controller_search'
 
 module Amministrativa
+  # Amministrativa abstract controller.
+  # Every resource should inherited from this controller.
   class AmministrativaController < Amministrativa.parent_controller.constantize
     DEFAULT_MEMBER_ACTIONS = [:show, :edit, :update, :destroy].freeze
 
@@ -55,20 +57,20 @@ module Amministrativa
 
     protected
 
-      def member_actions
-        DEFAULT_MEMBER_ACTIONS
-      end
+    def member_actions
+      DEFAULT_MEMBER_ACTIONS
+    end
 
-      def collection
-        resource_class
-      end
+    def collection
+      resource_class
+    end
 
-      def set_resource
-        @resource = collection.find(params[:id])
-      end
+    def set_resource
+      @resource = collection.find(params[:id])
+    end
 
-      def resource_params
-        {}
-      end
+    def resource_params
+      {}
+    end
   end
 end

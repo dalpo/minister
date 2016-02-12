@@ -18,12 +18,12 @@ module Amministrativa
 
     protected
 
-      def amministrativa_manifest_for(manifest)
-        ManifestResolver.resolve(manifest)
-      end
+    def amministrativa_manifest_for(manifest)
+      ManifestResolver.resolve(manifest)
+    end
 
-      def amministrativa_resources_for(manifest)
-        amministrativa_manifest_for(manifest).resources
-      end
+    def amministrativa_resources_for(manifest)
+      amministrativa_manifest_for(manifest).resources
+    end
   end
 end

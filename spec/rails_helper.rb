@@ -1,17 +1,20 @@
-ENV["RAILS_ENV"] = "test"
+ENV['RAILS_ENV'] = 'test'
 
-require "dotenv"
+require 'dotenv'
 Dotenv.load
 
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+if Rails.env.production?
+  abort('The Rails environment is running in production mode!')
+end
+
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require "shoulda/matchers"
+require 'shoulda/matchers'
 
-Dir[Rails.root.join("../../spec/support/**/*.rb")].each { |file| require file }
+Dir[Rails.root.join('../../spec/support/**/*.rb')].each { |file| require file }
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

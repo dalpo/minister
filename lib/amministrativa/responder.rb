@@ -1,4 +1,5 @@
 module Amministrativa
+  # Amministra default Responder class
   class ApplicationResponder < ActionController::Responder
     include Responders::FlashResponder
     include Responders::HttpCacheResponder

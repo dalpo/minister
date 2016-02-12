@@ -1,4 +1,4 @@
-$:.push File.expand_path('../lib', __FILE__)
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
 require 'amministrativa/version'
@@ -16,7 +16,13 @@ Gem::Specification.new do |s|
   TODO: Description of Amministrativa.
 DESCRIPTION
 
-  s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir[
+    '{app,config,db,lib}/**/*',
+    'MIT-LICENSE',
+    'Rakefile',
+    'README.rdoc'
+  ]
+
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rails', '~> 4.2'

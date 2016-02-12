@@ -1,4 +1,5 @@
 module Amministrativa
+  # Class responsible to identify a Manifest by a given name
   class ManifestResolver
     def self.resolve(manifest_name)
       "#{manifest_name.classify}Manifest".constantize
@@ -6,7 +7,8 @@ module Amministrativa
 
     attr_reader :manifest_name
 
-    # manifest_name must be a `String` compatible with the rails `classify` method
+    # manifest_name must be a `String` compatible with the rails
+    # `classify` method
     def initialize(manifest_name)
       @manifest_name = manifest_name
     end
