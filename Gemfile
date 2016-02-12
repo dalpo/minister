@@ -21,6 +21,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
   gem 'i18n-tasks'
+  gem 'rubocop', '~> 0.36.0', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :test do
