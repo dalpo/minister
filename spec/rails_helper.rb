@@ -1,9 +1,12 @@
 ENV['RAILS_ENV'] = 'test'
 
+require 'simplecov'
+SimpleCov.start 'rails'
+
 require 'dotenv'
 Dotenv.load
 
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../dummy/config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 if Rails.env.production?
   abort('The Rails environment is running in production mode!')

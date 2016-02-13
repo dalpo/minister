@@ -1,4 +1,5 @@
 # frozen_string_literal: false
+require 'rails_helper'
 require 'i18n/tasks'
 
 RSpec.describe I18n do

@@ -10,8 +10,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use a debugger
-# gem 'byebug', group: [:development, :test]
+gem 'sqlite3'
 
 group :development, :test do
   gem 'byebug'
@@ -34,4 +33,5 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1.1'
   gem 'timecop'
   gem 'webmock'
+  gem 'simplecov', require: false
 end
