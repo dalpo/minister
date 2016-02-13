@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :amministrativa do
+# task :minister do
 #   # Task goes here
 # end

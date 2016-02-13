@@ -1,19 +1,19 @@
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
-require 'amministrativa/version'
+require 'minister/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'amministrativa'
-  s.version     = Amministrativa::VERSION
+  s.name        = 'minister'
+  s.version     = Minister::VERSION
   s.authors     = ['Andrea Dal Ponte']
   s.email       = ['info@andreadalponte.com']
   s.license     = 'MIT'
   s.homepage    = 'TODO'
-  s.summary     = 'TODO: Summary of Amministrativa.'
+  s.summary     = 'TODO: Summary of Minister.'
   s.description = <<-DESCRIPTION
-  TODO: Description of Amministrativa.
+  TODO: Description of Minister.
 DESCRIPTION
 
   s.files = Dir[

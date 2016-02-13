@@ -1,6 +1,6 @@
-module Amministrativa
+module Minister
   module Fields
-    # Amministrativa abstract class with the field render logic
+    # Minister abstract class with the field render logic
     class Base
       attr_reader :name, :model, :options
 
@@ -35,15 +35,15 @@ module Amministrativa
       # Lookup translations based on object name, actual action and attribute.
       # Lookup priority as follows:
       #
-      #   amministrativa.{namespace}.{model}.{action}.{attribute}
-      #   amministrativa.{namespace}.{model}.{attribute}
-      #   amministrativa.{namespace}.defaults.{attribute}
+      #   minister.{namespace}.{model}.{action}.{attribute}
+      #   minister.{namespace}.{model}.{attribute}
+      #   minister.{namespace}.defaults.{attribute}
       #
       #  Namespace is used for :labels and :hints.
       #
       #  Example:
       #
-      #    amministrativa:
+      #    minister:
       #      labels:
       #        user:
       #          email: 'E-mail para efetuar o sign in.'
@@ -54,7 +54,7 @@ module Amministrativa
       end
 
       def i18n_scope
-        'amministrativa'
+        'minister'
       end
     end
   end

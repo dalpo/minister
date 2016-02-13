@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 require 'rails'
-require 'amministrativa/engine'
+require 'minister/engine'
 
-# Amministrativa base module with default configurations
-module Amministrativa
-  # The parent controller all Amministrativa controllers inherits from.
+# Minister base module with default configurations
+module Minister
+  # The parent controller all Minister controllers inherits from.
   # Defaults to ApplicationController. This should be set early
   # in the initialization process and should be set to a string.
   mattr_accessor :parent_controller
   @@parent_controller = 'ActionController::Base'
 
-  # Default Responder class used in Amministrativa
+  # Default Responder class used in Minister
   mattr_accessor :responder_class
-  @@responder_class = 'Amministrativa::Responder'
+  @@responder_class = 'Minister::Responder'
 
-  # Default Responder formats used in Amministrativa
+  # Default Responder formats used in Minister
   mattr_accessor :responder_formats
   @@responder_formats = [:html, :json].freeze
 

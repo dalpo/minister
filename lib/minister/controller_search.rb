@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module Amministrativa
+module Minister
   # Controller concern responsible to manage Ransack search logic
   module ControllerSearch
     extend ActiveSupport::Concern

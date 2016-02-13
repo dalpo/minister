@@ -1,7 +1,7 @@
 require 'active_support/concern'
-require 'amministrativa/resource_resolver'
+require 'minister/resource_resolver'
 
-module Amministrativa
+module Minister
   # Controller concern responsible to identify the current resource
   module ControllerResolver
     extend ActiveSupport::Concern

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    amministrativa (0.0.1)
+    minister (0.0.1)
       rails (~> 4.2)
       ransack
       responders
@@ -235,7 +235,6 @@ PLATFORMS
 
 DEPENDENCIES
   ammeter
-  amministrativa!
   byebug
   capybara
   database_cleaner
@@ -243,6 +242,7 @@ DEPENDENCIES
   factory_girl_rails
   formulaic
   i18n-tasks
+  minister!
   poltergeist
   pry-byebug
   pry-rails

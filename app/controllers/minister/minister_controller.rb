@@ -1,11 +1,11 @@
-require 'amministrativa/controller_responder'
-require 'amministrativa/controller_resolver'
-require 'amministrativa/controller_search'
+require 'minister/controller_responder'
+require 'minister/controller_resolver'
+require 'minister/controller_search'
 
-module Amministrativa
-  # Amministrativa abstract controller.
+module Minister
+  # Minister abstract controller.
   # Every resource should inherited from this controller.
-  class AmministrativaController < Amministrativa.parent_controller.constantize
+  class MinisterController < Minister.parent_controller.constantize
     DEFAULT_MEMBER_ACTIONS = [:show, :edit, :update, :destroy].freeze
 
     include ControllerResponder
@@ -17,42 +17,42 @@ module Amministrativa
     def index
       @resources = search_collection.page(params[:page])
       yield @resources if block_given?
-      respond_with(@resources)
+      respond_with @resources
     end
 
     def show
       yield @resource if block_given?
-      respond_with(@resource)
+      respond_with @resource
     end
 
     def new
       @resource = resource_class.new
       yield @resource if block_given?
-      respond_with(@resource)
+      respond_with @resource
     end
 
     def edit
       yield @resource if block_given?
-      respond_with(@resource)
+      respond_with @resource
     end
 
     def create
       @resource = resource_class.new(resource_params)
       @resource.save
       yield @resource if block_given?
-      respond_with(@resource)
+      respond_with @resource
     end
 
     def update
       @resource.update(resource_params)
       yield @resource if block_given?
-      respond_with(@resource)
+      respond_with @resource
     end
 
     def destroy
       @resource.destroy
       yield @resource if block_given?
-      respond_with(@resource)
+      respond_with @resource
     end
 
     protected

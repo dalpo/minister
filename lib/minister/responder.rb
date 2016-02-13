@@ -1,4 +1,4 @@
-module Amministrativa
+module Minister
   # Amministra default Responder class
   class ApplicationResponder < ActionController::Responder
     include Responders::FlashResponder

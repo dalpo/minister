@@ -1,4 +1,4 @@
-module Amministrativa
+module Minister
   # Class responsible to identify a Resource by a given name
   class ResourceResolver
     attr_reader :resource_name

@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module Amministrativa
+module Minister
   # Controller concern resposible to initialiaze the configured responder
   module ControllerResponder
     extend ActiveSupport::Concern
@@ -12,11 +12,11 @@ module Amministrativa
 
     class_methods do
       def responder_class
-        Amministrativa.responder_class.to_s.constantize
+        Minister.responder_class.to_s.constantize
       end
 
       def responder_formats
-        Amministrativa.responder_formats
+        Minister.responder_formats
       end
     end
   end

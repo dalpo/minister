@@ -1,4 +1,4 @@
-module Amministrativa
+module Minister
   # Class responsible to identify a Manifest by a given name
   class ManifestResolver
     def self.resolve(manifest_name)

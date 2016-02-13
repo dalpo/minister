@@ -1,2 +1,2 @@
-Amministrativa::Engine.routes.draw do
+Minister::Engine.routes.draw do
 end

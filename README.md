@@ -1,4 +1,4 @@
-# Amministrativa
+# Minister
 
 Prototype for an optionated admin dashboard for fast and flexible development.
 This is only a smart scaffold heavily inspired by rails_admin and administrate.
@@ -13,15 +13,15 @@ This is only a smart scaffold heavily inspired by rails_admin and administrate.
   3. Pass no more than four parameters into a method. Hash options are parameters.
   4. Controllers can instantiate only one object. Therefore, views can only know about one instance variable and views should only send messages to that object. (See Facades patterns)
 
-### Amministrativa manifests:
+### Minister manifests:
 
-With Amministrativa you could have more admin dashboards. Every dashboard has its own manifest.
+With Minister you could have more admin dashboards. Every dashboard has its own manifest.
 
-Amministrativa could manage different admin dashboard.
+Minister could manage different admin dashboard.
 Every admin dashboard has got its manifest which defines its resources.
 
 
-### Amministrativa libraries stack:
+### Minister libraries stack:
 
 #### Facades patterns:
 
