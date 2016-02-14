@@ -8,15 +8,19 @@ module Minister
   # Defaults to ApplicationController. This should be set early
   # in the initialization process and should be set to a string.
   mattr_accessor :parent_controller
-  @@parent_controller = 'ActionController::Base'
+  @@parent_controller = 'ActionController::Base'.freeze
 
   # Default Responder class used in Minister
   mattr_accessor :responder_class
-  @@responder_class = 'Minister::Responder'
+  @@responder_class = 'Minister::Responder'.freeze
 
   # Default Responder formats used in Minister
   mattr_accessor :responder_formats
   @@responder_formats = [:html, :json].freeze
+
+  # Default Authorization adapter used inside Minister
+  mattr_accessor :authorization_adapter
+  @@authorization_adapter = 'Minister::Autorizations::Base'
 
   # Default way to setup Devise. Run rails generate devise_install to create
   # a fresh initializer with all configuration values.

@@ -33,8 +33,6 @@ http://c2.com/cgi/wiki?FacadePattern
 
 #### Ransack
 
-Search...
-
 #### Turbolinks
 
 #### Simple Form
