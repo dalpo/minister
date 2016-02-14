@@ -1,10 +1,15 @@
 .bundle/
-log/*.log
+
 pkg/
+log/*.log
+tmp/pids/server.pid
+
 spec/dummy/db/*.sqlite3
 spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log
+spec/dummy/log/development.log
 spec/dummy/tmp/
 spec/dummy/.sass-cache
 spec/examples.txt
-coverage
+
+coverage/

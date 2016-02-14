@@ -3,9 +3,27 @@
 Prototype for an optionated admin dashboard for fast and flexible development.
 This is only a smart scaffold heavily inspired by rails_admin and administrate.
 
+# Install
+
+Add into your Gemfile:
+
+```ruby
+gem 'minister'
+```
+
+# Demo
+
+```
+git clone git@github.com:dalpo/minister.git
+cd minister
+bundle install
+bundle exec rake db:setup
+bundle exec rails server
+```
+
 # Priciples:
 
-- Avoid DSL. Everithing should be only a PORO.
+- Avoid DSL (domain specific languages). Everithing should be only a PORO.
 
 - Sandi Metz' Rules For Developers
   1. Classes can be no longer than one hundred lines of code.
