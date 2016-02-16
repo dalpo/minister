@@ -7,8 +7,8 @@ module Minister
     extend ActiveSupport::Concern
 
     included do
-      delegate :resource_class, :resource_name, :namespace,
-               to: :resource_resolver
+      delegate :resource_class, :namespace,
+               to: :resource_resolver, prefix: nil
     end
 
     protected
@@ -18,7 +18,7 @@ module Minister
     end
 
     def resource_resolver
-      @resolver ||= ResourceResolver.new(resource_name)
+      @resource_resolver ||= ResourceResolver.new(resource_name)
     end
   end
 end
