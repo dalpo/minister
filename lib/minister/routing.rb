@@ -9,7 +9,10 @@ module Minister
       # mount Minister::Engine => "/minister"
 
       namespace manifest, options do
-        minister_resources_for(manifest).each do |name|
+        resources = minister_resources_for(manifest)
+        root controller: resources.first, action: :index, resource_name: resources.first
+
+        resources.each do |name|
           # `resource_name` is required by minister controllers
           resources name, resource_name: name
         end
