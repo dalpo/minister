@@ -27,5 +27,7 @@ DESCRIPTION
 
   s.add_dependency 'rails', '~> 4.2'
   s.add_dependency 'responders'
+  s.add_dependency 'kaminari'
   s.add_dependency 'ransack'
+  s.add_dependency 'slim'
 end
