@@ -1,0 +1,12 @@
+doctype html
+html lang=I18n.locale
+  = render 'layouts/minister/head'
+
+  body
+    = render 'layouts/minister/header'
+
+    .container
+      = yield
+
+    = render 'layouts/minister/footer'
+    = render 'layouts/minister/footer_javascripts'
