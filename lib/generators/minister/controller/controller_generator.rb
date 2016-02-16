@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails/generators/named_base'
 
 module Minister
@@ -13,10 +14,10 @@ module Minister
       desc 'Creates a minister esource controller'
       def create_resource_controller
         destination = Rails.root.join(
-          "app/controllers/#{manifest_name}/#{plural_file_name}_controller.rb",
+          "app/controllers/#{manifest_name}/#{plural_file_name}_controller.rb"
         )
 
-        template("controller.rb.erb", destination)
+        template('controller.rb.erb', destination)
       end
 
       private
@@ -34,7 +35,7 @@ module Minister
       end
 
       def index_attributes
-        ['id'] + form_attributes.first(3) + ['created_at', 'updated_at']
+        %w(id) + form_attributes.first(3) + %w(created_at updated_at)
       end
 
       def enum_column?(attr)
@@ -43,13 +44,8 @@ module Minister
       end
 
       def column_type_for_attribute(attr)
-        datatype = if enum_column?(attr)
-          :enum
-        else
-          klass.column_types[attr].type
-        end
-
-        datatype || 'string'
+        datatype = enum_column?(attr) ? :enum : klass.column_types[attr].type
+        datatype || :string
       end
     end
   end

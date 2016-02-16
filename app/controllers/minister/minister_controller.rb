@@ -11,7 +11,7 @@ module Minister
       attr_reader :current_user, :resource
 
       def self.index_attributes_limit
-        4.freeze
+        4
       end
 
       def self.read_only_attributes
@@ -25,10 +25,8 @@ module Minister
 
       # All available attributes
       def attributes
-        @attributes ||= if defined?(ATTRIBUTES_MAPPING)
-          ATTRIBUTES_MAPPING.keys.freeze
-        else
-          []
+        @attributes ||= begin
+          defined?(ATTRIBUTES_MAPPING) ? ATTRIBUTES_MAPPING.keys : []
         end
       end
 
