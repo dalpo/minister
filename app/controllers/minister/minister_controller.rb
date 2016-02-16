@@ -1,3 +1,4 @@
+require 'minister/controller_councillor'
 require 'minister/controller_responder'
 require 'minister/controller_resolver'
 require 'minister/controller_search'

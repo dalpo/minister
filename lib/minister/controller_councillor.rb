@@ -6,9 +6,10 @@ module Minister
     extend ActiveSupport::Concern
 
     included do
+      helper_method :councillor
     end
 
-    class_methods do
+    def councillor
     end
   end
 end
