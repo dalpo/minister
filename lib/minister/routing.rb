@@ -10,7 +10,10 @@ module Minister
 
       namespace manifest, options do
         resources = minister_resources_for(manifest)
-        root controller: resources.first, action: :index, resource_name: resources.first
+        root \
+          resource_name: resources.first,
+          controller: resources.first,
+          action: :index
 
         resources.each do |name|
           # `resource_name` is required by minister controllers

@@ -7,7 +7,7 @@ module Minister
 
     included do
       self.responder = Minister.responder_class.to_s.constantize
-      respond_to *Minister.responder_formats
+      respond_to(*Minister.responder_formats)
     end
   end
 end
