@@ -2,7 +2,7 @@ module Minister
   # Class responsible to identify a Manifest by a given name
   class ManifestResolver
     def self.resolve(manifest_name)
-      "#{manifest_name.classify}Manifest".constantize
+      "#{manifest_name.to_s.classify}Manifest".constantize
     end
 
     attr_reader :manifest_name

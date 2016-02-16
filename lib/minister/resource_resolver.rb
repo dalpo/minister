@@ -10,7 +10,7 @@ module Minister
     end
 
     def resource_class
-      @resource_class ||= resource_name.classify
+      @resource_class ||= resource_name.to_s.classify.constantize
     end
   end
 end
