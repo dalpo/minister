@@ -6,18 +6,8 @@ module Minister
     extend ActiveSupport::Concern
 
     included do
-      self.responder = responder_class
-      respond_to responder_formats
-    end
-
-    class_methods do
-      def responder_class
-        Minister.responder_class.to_s.constantize
-      end
-
-      def responder_formats
-        Minister.responder_formats
-      end
+      self.responder = Minister.responder_class.to_s.constantize
+      respond_to *Minister.responder_formats
     end
   end
 end
