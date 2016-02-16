@@ -3,11 +3,59 @@ require 'minister/controller_resolver'
 require 'minister/controller_search'
 
 module Minister
-  # Minister abstract controller.
+  # Minister abstract controller class.
   # Every resource should inherited from this controller.
   class MinisterController < Minister.parent_controller.constantize
+    # Councillor abstract class
+    class Councillor
+      attr_reader :current_user, :resource
+
+      def self.index_attributes_limit
+        4.freeze
+      end
+
+      def self.read_only_attributes
+        %w(id created_at updated_at).freeze
+      end
+
+      def initialize(current_user, resource)
+        @current_user = current_user
+        @resource = resource
+      end
+
+      # All available attributes
+      def attributes
+        @attributes ||= if defined?(ATTRIBUTES_MAPPING)
+          ATTRIBUTES_MAPPING.keys.freeze
+        else
+          []
+        end
+      end
+
+      def show_attributes
+        attributes
+      end
+
+      def index_attributes
+        show_attributes.first(self.class.index_attributes_limit)
+      end
+
+      def form_attributes
+        attributes - self.class.read_only_attributes
+      end
+
+      def create_attributes
+        form_attributes
+      end
+
+      def update_attributes
+        form_attributes
+      end
+    end
+
     DEFAULT_MEMBER_ACTIONS = [:show, :edit, :update, :destroy].freeze
 
+    include ControllerCouncillor
     include ControllerResponder
     include ControllerResolver
     include ControllerSearch
@@ -17,6 +65,7 @@ module Minister
     def index
       @resources = search_collection.page(params[:page])
       yield @resources if block_given?
+      # perform_with @resources
       respond_with @resources
     end
 
