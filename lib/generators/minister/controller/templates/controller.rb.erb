@@ -1,0 +1,50 @@
+module <%= manifest_name.classify %>
+  class <%= class_name.pluralize %>Controller < Minister::MinisterController
+    class Councillor < Councillor
+      # ATTRIBUTE_TYPES
+      # a hash that describes the type of each of the model's fields.
+      ATTRIBUTES_MAPPING = {
+      <%- attributes.each do |attr| -%>
+        <%= attr %>: :<%= column_type_for_attribute(attr) %>,
+      <%- end -%>
+      }.freeze
+
+      # All available attributes
+      # def attributes
+      #   %i(
+      <%- attributes.each do |attr| -%>
+      #     <%= attr %>
+      <%- end -%>
+      #   )
+      # end
+
+      # def index_attributes
+      #   %i(
+      <%- index_attributes.each do |attr| -%>
+      #     <%= attr %>
+      <%- end -%>
+      #   )
+      # end
+
+      # def show_attributes
+      #   attributes
+      # end
+
+      # def form_attributes
+      #   %i(
+      <%- form_attributes.each do |attr| -%>
+      #     <%= attr %>
+      <%- end -%>
+      #   )
+      # end
+
+      # def create_attributes
+      #   form_attributes
+      # end
+
+      # def update_attributes
+      #   form_attributes
+      # end
+    end
+  end
+end
