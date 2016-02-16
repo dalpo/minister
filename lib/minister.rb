@@ -2,6 +2,15 @@
 require 'rails'
 require 'minister/engine'
 
+# External dependencies
+require 'responders'
+require 'kaminari'
+require 'ransack'
+require 'slim'
+
+require 'minister/manifest'
+require 'minister/responder'
+
 # Minister base module with default configurations
 module Minister
   # The parent controller all Minister controllers inherits from.
